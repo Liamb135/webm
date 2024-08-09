@@ -36,3 +36,16 @@ ffmpeg -i input.gif -c:v libvpx-vp9 -lossless 1 -pix_fmt yuva420p output.webm
     -c:v libvpx-vp9                           # Sets the video codec to VP9.
     -lossless 1                               # Lossless mode to preserve colour and quality.
     -pix_fmt yuva420p                         # Format supports transparency.
+    -output.webm                              # The name of the output file.
+
+---
+
+### Remove sound from WebM
+
+```bash
+ffmpeg -i input.webm -c:v copy -an output.webm
+```
+    -i input.webm                             # Specifies the input video file.
+    -c:v copy                                 # Copies the video stream without re-encoding it.
+    -an                                       # Removes all audio streams from the output file.
+    -output.webm                              # The name of the output file without audio.
