@@ -17,7 +17,7 @@ ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:no
     -v error                                  # Show only error messages.
     -show_entries format=duration             # Display the duration of the file.
     -of default=noprint_wrappers=1:nokey=1    # Output only the value, without extra formatting.
-    input.webm                                # The video file to analyze.
+    input.webm                                # The WebM file to analyze.
 
 **Calculate the BPM**: 
 - BPM = 60 / Duration (in seconds)
@@ -45,7 +45,7 @@ ffmpeg -i input.gif -c:v libvpx-vp9 -lossless 1 -pix_fmt yuva420p output.webm
 ```bash
 ffmpeg -i input.webm -c:v copy -an output.webm
 ```
-    -i input.webm                             # Specifies the input video file.
-    -c:v copy                                 # Copies the video stream without re-encoding it.
+    -i input.webm                             # Input WebM file.
+    -c:v copy                                 # Copies the video stream, without re-encoding it.
     -an                                       # Removes all audio streams from the output file.
-    -output.webm                              # The name of the output file without audio.
+    -output.webm                              # The name of the output file, without audio.
